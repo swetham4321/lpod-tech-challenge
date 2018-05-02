@@ -1,0 +1,42 @@
+logging:
+  level:
+    org.springframework.web: INFO
+    com.veritas: INFO
+    com.datastax.driver.core: ERROR
+---
+spring:
+  profiles: local
+
+selenium:
+  implicitWaitTime: 15
+  webDriverWaitTimeout: 40
+  browser: CHROME
+  incognitoMode: true
+  ieRemoteIp: 10.2.20.5
+  ieRemotePort: 5558
+
+env:
+  appleUkUrl: https://www.apple.com/uk/
+  captureScreenShot: true
+  screenshotResourcePath: /src/results/screenshots/
+  binaryResourcePath: /src/resources/binaries/
+  chromeDriver: chromeDriver/chromedriver
+  ieDriver: ieDriver/IEDriverServer.exe
+
+---
+spring:
+  profiles: jenkins-nightly
+
+selenium:
+  implicitWaitTime: 20
+  webDriverWaitTimeout: 50
+  browser: CHROME
+  incognitoMode: true
+
+env:
+  appleUkUrl: https://www.apple.com/uk/
+  captureScreenShot: true
+  screenshotResourcePath: /src/results/screenshots/
+  binaryResourcePath: /src/resources/binaries/
+  chromeDriver: chromeDriver/chromedriver
+  ieDriver: ieDriver/IEDriverServer.exe
