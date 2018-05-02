@@ -53,7 +53,7 @@ public class MacBookProSteps {
             }
         }
 
-        macPage.isHeaderMacBookProMenuItemDisplayed();
+        assertThat(macPage.isHeaderMacBookProMenuItemDisplayed(), is(true));
         macPage.clickOnMacBookProHeaderMenuItem();
         macPage.clickBuyButtonLink();
         macPage.selectMacBookProScreen(screen);
